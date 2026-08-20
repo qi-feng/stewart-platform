@@ -1,0 +1,12 @@
+{
+  "autodeskProduct": "Fusion360",
+  "type": "script",
+  "id": "86e078c2-57e2-46b3-8795-7c916db8cd74",
+  "author": "Codex",
+  "description": {
+    "": "Create a reinforced central laser passage and separate split clamp for the Stewart-platform adapter."
+  },
+  "version": "1.0.0",
+  "supportedOS": "windows|mac",
+  "editEnabled": true
+}
