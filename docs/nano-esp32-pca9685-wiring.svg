@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Arduino Nano ESP32 to PCA9685 Stewart-platform wiring</title>
+  <desc id="desc">Four logic connections between an Arduino Nano ESP32 and a PCA9685, a separate servo power supply, and exact assignments for servos zero through five.</desc>
+  <rect width="1200" height="820" fill="#ffffff"/>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #172033; }
+    .title { font-size: 34px; font-weight: 600; }
+    .subtitle { font-size: 18px; fill: #59657a; }
+    .board { fill: #f7f9fc; stroke: #cbd3df; stroke-width: 2; rx: 18; }
+    .board-title { font-size: 24px; font-weight: 600; }
+    .pin { fill: #ffffff; stroke: #d6dce6; stroke-width: 1.5; rx: 9; }
+    .pin-name { font-size: 18px; font-weight: 600; }
+    .pin-note { font-size: 14px; fill: #68758a; }
+    .wire-label { font-size: 15px; font-weight: 600; }
+    .section { font-size: 22px; font-weight: 600; }
+    .channel { fill: #f7f9fc; stroke: #cbd3df; stroke-width: 1.5; rx: 10; }
+    .channel-title { font-size: 17px; font-weight: 600; }
+    .channel-pins { font-size: 13px; fill: #59657a; }
+    .warning { font-size: 17px; font-weight: 600; fill: #a32727; }
+    .note { font-size: 15px; fill: #59657a; }
+  </style>
+
+  <text class="title" x="55" y="55">Nano ESP32 → PCA9685 servo wiring</text>
+  <text class="subtitle" x="55" y="84">Logic and servo power use separate rails; all grounds are common.</text>
+
+  <rect class="board" x="55" y="115" width="330" height="350"/>
+  <text class="board-title" x="80" y="153">Arduino Nano ESP32</text>
+  <rect class="pin" x="80" y="178" width="280" height="54"/>
+  <text class="pin-name" x="98" y="202">3V3 OUT</text><text class="pin-note" x="98" y="221">logic power</text>
+  <rect class="pin" x="80" y="244" width="280" height="54"/>
+  <text class="pin-name" x="98" y="268">GND</text><text class="pin-note" x="98" y="287">common ground</text>
+  <rect class="pin" x="80" y="310" width="280" height="54"/>
+  <text class="pin-name" x="98" y="334">A4 / D21 / GPIO11</text><text class="pin-note" x="98" y="353">SDA · I²C data</text>
+  <rect class="pin" x="80" y="376" width="280" height="54"/>
+  <text class="pin-name" x="98" y="400">A5 / D22 / GPIO12</text><text class="pin-note" x="98" y="419">SCL · I²C clock</text>
+
+  <rect class="board" x="815" y="115" width="330" height="350"/>
+  <text class="board-title" x="840" y="153">PCA9685 logic header</text>
+  <rect class="pin" x="840" y="178" width="280" height="54"/>
+  <text class="pin-name" text-anchor="end" x="1102" y="202">VCC</text><text class="pin-note" text-anchor="end" x="1102" y="221">3.3 V logic · not V+</text>
+  <rect class="pin" x="840" y="244" width="280" height="54"/>
+  <text class="pin-name" text-anchor="end" x="1102" y="268">GND</text><text class="pin-note" text-anchor="end" x="1102" y="287">logic header</text>
+  <rect class="pin" x="840" y="310" width="280" height="54"/>
+  <text class="pin-name" text-anchor="end" x="1102" y="334">SDA</text><text class="pin-note" text-anchor="end" x="1102" y="353">I²C data</text>
+  <rect class="pin" x="840" y="376" width="280" height="54"/>
+  <text class="pin-name" text-anchor="end" x="1102" y="400">SCL</text><text class="pin-note" text-anchor="end" x="1102" y="419">I²C clock</text>
+
+  <line x1="385" y1="205" x2="815" y2="205" stroke="#7b4dd6" stroke-width="4"/>
+  <circle cx="385" cy="205" r="6" fill="#7b4dd6"/><circle cx="815" cy="205" r="6" fill="#7b4dd6"/>
+  <text class="wire-label" text-anchor="middle" x="600" y="195" fill="#7b4dd6">3.3 V logic</text>
+  <line x1="385" y1="271" x2="815" y2="271" stroke="#59657a" stroke-width="4"/>
+  <circle cx="385" cy="271" r="6" fill="#59657a"/><circle cx="815" cy="271" r="6" fill="#59657a"/>
+  <text class="wire-label" text-anchor="middle" x="600" y="261">common ground</text>
+  <line x1="385" y1="337" x2="815" y2="337" stroke="#1976c9" stroke-width="4"/>
+  <circle cx="385" cy="337" r="6" fill="#1976c9"/><circle cx="815" cy="337" r="6" fill="#1976c9"/>
+  <text class="wire-label" text-anchor="middle" x="600" y="327" fill="#1976c9">SDA</text>
+  <line x1="385" y1="403" x2="815" y2="403" stroke="#dd6b20" stroke-width="4"/>
+  <circle cx="385" cy="403" r="6" fill="#dd6b20"/><circle cx="815" cy="403" r="6" fill="#dd6b20"/>
+  <text class="wire-label" text-anchor="middle" x="600" y="393" fill="#dd6b20">SCL</text>
+
+  <text class="section" x="55" y="510">Separate servo power</text>
+  <rect class="board" x="55" y="535" width="330" height="120"/>
+  <text class="board-title" x="80" y="574">Regulated 5–6 V supply</text>
+  <text class="pin-note" x="80" y="604">Size wiring and protection from measured load.</text>
+  <text class="pin-note" x="80" y="627">Use current limiting during first tests.</text>
+
+  <rect class="board" x="815" y="535" width="330" height="120"/>
+  <text class="board-title" x="840" y="574">PCA9685 screw terminal</text>
+  <text class="pin-name" x="840" y="610">V+   GND</text>
+  <line x1="385" y1="575" x2="815" y2="575" stroke="#d13b3b" stroke-width="4"/>
+  <circle cx="385" cy="575" r="6" fill="#d13b3b"/><circle cx="815" cy="575" r="6" fill="#d13b3b"/>
+  <text class="wire-label" text-anchor="middle" x="600" y="565" fill="#d13b3b">supply + → switch/fuse → V+</text>
+  <line x1="385" y1="625" x2="815" y2="625" stroke="#59657a" stroke-width="4"/>
+  <circle cx="385" cy="625" r="6" fill="#59657a"/><circle cx="815" cy="625" r="6" fill="#59657a"/>
+  <text class="wire-label" text-anchor="middle" x="600" y="615">supply − / 0 V → GND</text>
+
+  <text class="section" x="55" y="700">Exact servo connector assignments</text>
+  <g transform="translate(55,720)">
+    <rect class="channel" x="0" y="0" width="170" height="60"/><text class="channel-title" x="14" y="25">Servo 0 → CH0</text><text class="channel-pins" x="14" y="46">PWM/S · V+ · GND</text>
+    <rect class="channel" x="184" y="0" width="170" height="60"/><text class="channel-title" x="198" y="25">Servo 1 → CH1</text><text class="channel-pins" x="198" y="46">PWM/S · V+ · GND</text>
+    <rect class="channel" x="368" y="0" width="170" height="60"/><text class="channel-title" x="382" y="25">Servo 2 → CH2</text><text class="channel-pins" x="382" y="46">PWM/S · V+ · GND</text>
+    <rect class="channel" x="552" y="0" width="170" height="60"/><text class="channel-title" x="566" y="25">Servo 3 → CH3</text><text class="channel-pins" x="566" y="46">PWM/S · V+ · GND</text>
+    <rect class="channel" x="736" y="0" width="170" height="60"/><text class="channel-title" x="750" y="25">Servo 4 → CH4</text><text class="channel-pins" x="750" y="46">PWM/S · V+ · GND</text>
+    <rect class="channel" x="920" y="0" width="170" height="60"/><text class="channel-title" x="934" y="25">Servo 5 → CH5</text><text class="channel-pins" x="934" y="46">PWM/S · V+ · GND</text>
+  </g>
+
+  <text class="warning" x="55" y="810">Never connect the six servos to Nano 3V3, VUSB, or VIN. Switch servo power off before rewiring.</text>
+</svg>
