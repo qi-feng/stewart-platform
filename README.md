@@ -7,6 +7,12 @@ This repository is a fork of [Nathan Ge's Stewart platform](https://github.com/n
 
 > **Project status:** The current interactive firmware is suitable for serial control of the servos and the platform orientation, as well as manual motion demonstration. Its X/Y and roll/pitch commands are still preliminary - not yet geometrically decoupled six-degree-of-freedom inverse kinematics. The range of motion can be limited until the geometry, servo centers, directions, and mechanical limits have been calibrated. 
 
+## Demonstration video
+
+[![Watch the Stewart platform demonstration](docs/toy-stewart-platform-demo-poster.jpg)](docs/toy-stewart-platform-demo-web.mp4)
+
+*Click the image to play the 19-second demonstration video.*
+
 ## Repository links
 
 - [Revision 4 printable parts](https://github.com/qi-feng/stewart-platform/tree/main/cad/stewart-frame_rev4)
