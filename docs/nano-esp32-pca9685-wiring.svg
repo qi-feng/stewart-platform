@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1180" viewBox="0 0 1200 1180" role="img" aria-labelledby="title desc">
   <title id="title">Arduino Nano ESP32 to PCA9685 Stewart-platform wiring</title>
-  <desc id="desc">Four logic connections between an Arduino Nano ESP32 and a PCA9685, a separate servo power supply, and exact assignments for servos zero through five.</desc>
-  <rect width="1200" height="820" fill="#ffffff"/>
+  <desc id="desc">Exact project wiring for the Arduino Nano ESP32, PCA9685, six servos, analog joystick, and Quarton TTL laser.</desc>
+  <rect width="1200" height="1180" fill="#ffffff"/>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #172033; }
     .title { font-size: 34px; font-weight: 600; }
@@ -18,6 +18,10 @@
     .channel-pins { font-size: 13px; fill: #59657a; }
     .warning { font-size: 17px; font-weight: 600; fill: #a32727; }
     .note { font-size: 15px; fill: #59657a; }
+    .control { fill: #f7f9fc; stroke: #cbd3df; stroke-width: 1.5; rx: 14; }
+    .control-title { font-size: 20px; font-weight: 600; }
+    .control-pin { font-size: 16px; font-weight: 600; }
+    .control-value { font-size: 15px; fill: #46546a; }
   </style>
 
   <text class="title" x="55" y="55">Nano ESP32 → PCA9685 servo wiring</text>
@@ -84,5 +88,35 @@
     <rect class="channel" x="920" y="0" width="170" height="60"/><text class="channel-title" x="934" y="25">Servo 5 → CH5</text><text class="channel-pins" x="934" y="46">PWM/S · V+ · GND</text>
   </g>
 
-  <text class="warning" x="55" y="810">Never connect the six servos to Nano 3V3, VUSB, or VIN. Switch servo power off before rewiring.</text>
+  <text class="section" x="55" y="830">Current joystick and TTL-laser wiring</text>
+
+  <rect class="control" x="55" y="855" width="530" height="245"/>
+  <text class="control-title" x="80" y="890">Analog joystick</text>
+  <text class="control-pin" x="80" y="925">VCC</text>
+  <text class="control-value" x="180" y="925">→ PCA VCC / Nano 3V3 logic rail</text>
+  <text class="control-pin" x="80" y="957">GND</text>
+  <text class="control-value" x="180" y="957">→ PCA GND / common system ground</text>
+  <text class="control-pin" x="80" y="989">VRx</text>
+  <text class="control-value" x="180" y="989">→ Nano A0 / D17 / GPIO1</text>
+  <text class="control-pin" x="80" y="1021">VRy</text>
+  <text class="control-value" x="180" y="1021">→ Nano A1 / D18 / GPIO2</text>
+  <text class="control-pin" x="80" y="1053">SW</text>
+  <text class="control-value" x="180" y="1053">→ Nano D2 / GPIO5</text>
+  <text class="note" x="80" y="1080">SW uses INPUT_PULLUP: pressed = LOW.</text>
+
+  <rect class="control" x="615" y="855" width="530" height="245"/>
+  <text class="control-title" x="640" y="890">Quarton VLM-520/635-61 TTL laser</text>
+  <text class="control-pin" x="640" y="925">Power / V+</text>
+  <text class="control-value" x="790" y="925">→ PCA V+ / regulated 5 V rail</text>
+  <text class="control-pin" x="640" y="957">Ground</text>
+  <text class="control-value" x="790" y="957">→ PCA GND / common ground</text>
+  <text class="control-pin" x="640" y="989">TTL / EN</text>
+  <text class="control-value" x="790" y="989">→ Nano D7 / GPIO10</text>
+  <text class="control-pin" x="640" y="1021">Control</text>
+  <text class="control-value" x="790" y="1021">HIGH = ON · LOW = OFF</text>
+  <text class="warning" x="640" y="1057">D7 is signal only—not laser power.</text>
+  <text class="note" x="640" y="1083">Confirm the module pinout; do not assume wire colors.</text>
+
+  <text class="warning" x="55" y="1140">Never connect the six servos to Nano 3V3, VUSB, or VIN. Switch servo power off before rewiring.</text>
+  <text class="note" x="55" y="1165">The 5 V V+ rail powers servos and this laser; the 3.3 V VCC rail powers PCA logic and the joystick.</text>
 </svg>

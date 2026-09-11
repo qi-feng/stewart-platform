@@ -90,23 +90,23 @@ For each servo plug, connect its signal lead—usually orange, yellow, or white�
 
 ### Joystick wiring
 
-| Joystick pin | Nano ESP32 pin |
+| Joystick pin | Current project connection |
 |---|---|
-| VCC | 3V3 |
-| GND | GND |
-| VRx | A0 |
-| VRy | A1 |
-| SW | D2 |
+| VCC | PCA9685 **VCC** header—the same 3.3 V logic rail as Nano **3V3** |
+| GND | PCA9685 logic-header **GND**—the common system ground |
+| VRx | Nano **A0 / D17 / GPIO1** |
+| VRy | Nano **A1 / D18 / GPIO2** |
+| SW | Nano **D2 / GPIO5** |
 
-### Optional laser wiring
+### Current Quarton TTL-laser wiring
 
-| Laser connection | Project connection |
+| Laser connection | Current project connection |
 |---|---|
-| Power | Regulated voltage required by the specific laser module |
-| Ground | Common system ground |
-| TTL signal | Nano D7 |
+| Power / V+ | PCA9685 **V+** rail, supplied by the regulated **5 V** servo supply |
+| Ground | PCA9685 **GND** / common system ground |
+| TTL / EN | Nano **D7 / GPIO10** |
 
-Verify the laser module's voltage and TTL-input specifications before connecting it. Do not power an unknown module directly from a GPIO pin.
+The sketch drives D7 **HIGH** to turn the laser on and **LOW** to turn it off. D7 is only the TTL control signal; it does not power the laser. This mapping is for the prototype's [Quarton VLM-520-61](https://www.quarton.com/green-circular-dot-laser-module-with-ttl-modulation-function-vlm-520-61-series.html) or [VLM-635-61](https://www.quarton.com/red-circular-dot-laser-module-with-ttl-modulation-function-vlm-635-61-series.html), which accept 3–6 V DC power. Verify the manufacturer's pinout rather than relying on wire color, especially when substituting a different module.
 
 ### Critical power rules
 
