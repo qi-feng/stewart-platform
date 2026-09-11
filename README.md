@@ -177,4 +177,3 @@ True inverse kinematics must solve each rotary horn angle from the requested pla
 
 The starting mechanical design and repository structure came from [Nathan Ge's Stewart-platform project](https://github.com/nzge/stewart-platform). This fork contains subsequent experimental modifications and generated CAD/code artifacts.
 
-**TODO before public release:** add a license file that is compatible with the upstream material and clearly identify which files are original, modified, or third-party. The absence of a license file should not be interpreted as permission for unrestricted reuse.
