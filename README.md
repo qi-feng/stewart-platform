@@ -9,9 +9,11 @@ This repository is a fork of [Nathan Ge's Stewart platform](https://github.com/n
 
 ## Demonstration video
 
-[![Watch the Stewart platform demonstration](docs/toy-stewart-platform-demo-poster.jpg)](docs/toy-stewart-platform-demo-web.mp4)
+![Stewart platform demonstration](docs/toy-stewart-platform-demo-preview.gif)
 
-*Click the image to play the 19-second demonstration video.*
+[Play or download the 19-second MP4 with sound](https://raw.githubusercontent.com/qi-feng/stewart-platform/main/docs/toy-stewart-platform-demo-web.mp4)
+
+*The embedded GIF is silent; use the MP4 link for the full-quality version.*
 
 ## Repository links
 
